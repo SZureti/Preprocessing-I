@@ -1,59 +1,223 @@
-// Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+// Mixins
+.center() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	.mb20;
+  }
+  
+  .mb20() {
+	margin-bottom: 20px;
+  }
+  
+  .box-shadow (@x: 0px, @y: 3px, @blur: 5px, @alpha: 0.5) {
+	-webkit-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+	-moz-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+	box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+}
+  
+  // Variables
+  @main-color: @plain-old-red;
+  @plain-old-red: rgb(189, 167, 167);
+  @zodiac-blue: #112546;
+  @pacifico: 'Pacifico', cursive;
+  @economica: 'Economica', sans-serif;
+  @Sans: 'Julius Sans One', sans-serif;
+  @candal: 'Candal', sans-serif;
+  @background: lightgrey;
+  @emperor: #545454;
+  @primary: #B5BBC5;
+  @top-padding: 20px;
+  @bottom-padding: 10px;
+  
+  html {
+	box-sizing: border-box;
+	font-size: 62.5%; 
+		.box-shadow(5px, 5px, 6px, 0.3);
+  }
+  
+  *, *:before, *:after {
+	box-sizing: inherit;
+  }
+  
+  h1, h2, h3, h4, h5 {
+	font-size: 5rem;
+	color: @emperor;
+	font-family: @candal;
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  }
+  
+  img {
+   width: 100%;
+   height: auto;
+	.box-shadow(5px, 5px, 6px, 0.3);
+} 
+  
+  p {
+	line-height: 1.25;
+	margin: 20px 0;
+	font-size: 1.8rem;
+	color: @zodiac-blue;
+	padding: @top-padding;
+	font-family: @candal;
+  }
+
+  li {
+	  font-family: @sans;
+	  font-size: 4rem;
+	  color: @zodiac-blue;
+  }
+  
+  strong {
+	font-weight: bold;
+	color: @zodiac-blue;
+	// color: red;
+  }
+  
+  .container {
+	max-width: 800px;
+	margin: 0 auto;
+	font-size: 1.6rem;
+	// background-color: @background;
+	border: 4rem solid red;
+  }
+  
+  header {
+	border-bottom: 1px solid black;
+	margin: 20px 0;
+	padding: 20px 0;
+	display: flex;
+	justify-content: space-between;
+	display: flex;
+	// color: @emperor;
+  
+	@media( max-width: 500px ) {
+	  flex-direction: column;
+	  align-items: center;
+	}
+	
+	h1 {
+	  font-size: 5rem;
+	  font-family: @candal;
+	  
+	  @media( max-width: 500px ) {
+		margin-bottom: 20px;
+	  }
+	}
+
+	h3 {
+		font-size: 2rem;
+	}
+	
+	nav {
+	  margin-left: 62px;
+	//   background-color: @emperor;
+	  height: 5rem;
+	  text-align: center;
+
+	  @media( max-width: 500px ) {
+		margin-left: 0;
+	  }
+	  
+	  a {
+		color: @primary;
+		margin-left: 20px;
+		font-size: 1.8rem;
+		padding: 15px;
+	  }
+	  
+	  .first-anchor {
+		margin-left: 0;
+	  }
+	}// nav
+  } // header
+
+  .main-content {
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+	margin: 75px 0 35px 0;
+	padding: 35px 0;
+	font-size: 16px;
+	line-height: 18px;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+ 
+ .main-content .top-content {
+	 display: flex;
+ }
+  
+//  .main-content {
+// 	display: flex;
+// 	flex-wrap: wrap;
+  
+	@media( max-width: 500px ) {
+	  flex-direction: column;
+	}
+  
+	.top-content {
+	  margin: 20px 2.5%;
+	  width: 90%;
+  
+	  @media( max-width: 500px ) {
+		width: 90%;
+		display: flex;
+		flex-direction: column;
+	  }
+	.bottom-content {
+		margin: 20px 2.5%;
+		width: 90%;
+
+		@media( max-width: 500px ) {
+			width: 90%;
+			display: flex;
+			flex-direction: column;  
+	}
+	  }
+	}
+  }
+	
+  .main-footer {
+	margin-bottom: 40px;
+	display: flex;
+	justify-content: center;
+	border-top: 1px solid black;
+	padding-top: 20px;
+  }
+// 	nav {
+// 	  width: 90%;
+// 	  display: flex;
+// 	  justify-content: space-around;
+// 	}
+//   }
+
+table, th, td {
+	border: 1px solid rgb(153, 150, 150);
+	border-spacing: 5px;
+	width: 100%;
+	.box-shadow(5px, 5px, 6px, 0.3);
+  }
+
+th, td {
+	padding: 15px;
+	text-align: left; 
+  }
+
+th {
+	background-color: lightgrey;
 }
 
-/* Set every element's box-sizing to border-box */
-* {
-    box-sizing: border-box;
+td {
+	background-color: lightgray;
 }
 
-html, body {
-    height: 100%;
-}
-
+table tr:nth-child(even) {
+		background-color: rgb(175, 168, 168);
+	  }
+	  table tr:nth-child(odd) {
+		background-color: rgb(60, 60, 75);
+	 }
+	 table th {
+	color: rgb(78, 73, 73);
+	background-color: rgb(134, 131, 131);
+	 }  
